@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="test.js"></script>
+    <script>
+        class 动物{
+            说话(){
+                console.log("嗷嗷嗷！");
+            }
+        }
+
+        class 人类 extends 动物{
+            constructor(姓名,性别,年龄){
+                super();
+                this.姓名=姓名;
+                this.性别=性别;
+                this.年龄=年龄;
+            }
+            说话() {
+                console.log("嗨！");
+                return this;
+            }
+            介绍自己(){
+                console.log("大家好，我是"+this.姓名);
+                return this;
+            }
+            转JSON(){
+                console.log(JSON.stringify(this));
+            }
+        }
+
+        new 人类("王二麻子","男",26).说话().介绍自己().转JSON();
+    </script>
+</body>
+</html>
