@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var newWindow = null;
+
+        function openbaidu(){
+            newWindow = window.open("http://www.baidu.com");
+        }
+
+        function closeWindow(){
+            newWindow.close();
+        }
+
+        function isClose(){
+            console.log(newWindow.closed);
+        }
+    </script>
+
+    <button onclick="openbaidu()">打开百度</button>
+    <button onclick="closeWindow()">关闭百度</button>
+    <button onclick="isClose()">检测关闭百度</button>
+</body>
+</html>
