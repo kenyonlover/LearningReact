@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var newdiv = document.createElement("div");
+        newdiv.setAttribute("id","test");
+        document.body.append(newdiv);
+        newdiv.setAttribute("style","width:100px;height:100px;background-color:red");
+
+        var c1 = function listenertest() {
+            alert("hello new div");
+        }
+        newdiv.addEventListener('click',c1)
+        //newdiv.removeEventListener('onclick');
+
+        //监听事件
+        document.body.addEventListener('test', function (e) {
+            alert("test事件触发了")
+        }, false);
+        //创建事件对象
+        var event = document.createEvent('Event');
+        event.initEvent('test', true, true);
+        //触发事件
+        document.body.dispatchEvent(event);
+    </script>
+</body>
+</html>
